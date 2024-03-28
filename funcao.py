@@ -43,7 +43,7 @@ class Funcao:
             return
         print("Seu peso ideal é:", pesoIdeal)
 
-    def poligono(numeroLados: int, cmLados):
+    def poligono(numeroLados: int, cmLados: float):
         if numeroLados < 3:
             print("Nao e um poligono")
         elif numeroLados == 3:
