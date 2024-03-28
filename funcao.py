@@ -2,25 +2,25 @@ class Funcao:
     def __init__(self):
         pass
 
-    def comparacao(a: int, b: int):
+    def comparacao(a: int, b: int) -> None:
         if a > b:
             print("A é maior que B")
         else:
             print("B é maior que A")
 
-    def podeVotar(anoNascimento: int):
+    def podeVotar(anoNascimento: int) -> None:
         if ((2024 - anoNascimento) >= 18):
             print("Pode votar!")
         else:
             print("Não pode votar!")
 
-    def senhaCorreta(senha: str):
+    def senhaCorreta(senha: str) -> None:
         if senha == "1234":
             print("ACESSO PERMITIDO")
         else:
             print("ACESSO NEGADO")
 
-    def comprarMaca(quantidade: int):
+    def comprarMaca(quantidade: int) -> None:
         if quantidade >= 12:
             valorMaca = 0.25
             print("Quantidade de maças: {0}\nTOTAL:\tR$ {1}".format(quantidade, (valorMaca * quantidade)))
@@ -28,12 +28,13 @@ class Funcao:
             valorMaca = 0.30
             print("Quantidade de maças: {0}\nTOTAL:\tR$ {1}".format(quantidade, (valorMaca * quantidade)))
 
-    def ordemCrescente(n1: int, n2: int, n3: int):
+    def ordemCrescente(n1: int, n2: int, n3: int) -> None:
         ordem = [n1, n2, n3]
         ordem.sort()
-        print("Ordem crescente:", ordem)
+        ordemFormatada = str(ordem).replace("]", "").replace("[", "")
+        print("Ordem crescente:", ordemFormatada)
 
-    def pesoIdeal(altura: float, sexo: int):
+    def pesoIdeal(altura: float, sexo: int) -> None:
         if (sexo == 1): # Feminino
             pesoIdeal = (62.1 * altura) - 44.7
         elif (sexo == 2): # Masculino
@@ -43,7 +44,7 @@ class Funcao:
             return
         print("Seu peso ideal é:", pesoIdeal)
 
-    def poligono(numeroLados: int, cmLados: float):
+    def poligono(numeroLados: int, cmLados: float) -> None:
         if numeroLados < 3:
             print("Nao e um poligono")
         elif numeroLados == 3:
@@ -57,7 +58,7 @@ class Funcao:
         else:
             print("Poligono nao identificado")
 
-    def maiorDosTres(valor1: int, valor2: int, valor3: int):
+    def maiorDosTres(valor1: int, valor2: int, valor3: int) -> int:
         if (valor1 > valor2 and valor1 > valor3):
             maiorValor = valor1
         elif (valor2 > valor1 and valor2 > valor3):
@@ -67,7 +68,7 @@ class Funcao:
 
         return maiorValor
     
-    def definicaoTriangulo(lado1cm: float, lado2cm: float, lado3cm: float):
+    def definicaoTriangulo(lado1cm: float, lado2cm: float, lado3cm: float) -> None:
         if lado1cm == lado2cm and lado1cm == lado3cm:
             print("Triangulo equilatero possui 3 lados iguais")
         elif lado1cm == lado2cm or lado1cm == lado3cm:
@@ -75,7 +76,7 @@ class Funcao:
         else:
             print("Triangulo escaleno possui 3 lados diferentes")
 
-    def trianguleAngule(angulo1: float, angulo2: float, angulo3: float):
+    def anguloTriangulo(angulo1: float, angulo2: float, angulo3: float) -> None:
         if angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
             print("Triangulo Retangulo")
         elif angulo1 >= 90 or angulo2 >= 90 or angulo3 >= 90:
@@ -83,7 +84,7 @@ class Funcao:
         else:
             print("Triangulo Acutangulo")
 
-    def fatorial(nmr: int):
+    def fatorial(nmr: int) -> None:
         fatorial = nmr
         nmr = nmr - 1
         for i in range(1, nmr):
