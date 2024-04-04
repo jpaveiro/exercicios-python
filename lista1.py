@@ -1,5 +1,5 @@
 import os
-from funcao import Funcao
+from funcoes_lista1 import Funcao
 
 continuar = True
 
