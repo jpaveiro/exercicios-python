@@ -1,5 +1,5 @@
-from os import system
-clear = system("cls")
+import os
+os.system("cls")
 continuar = True
 
 # 1 ao 5
@@ -47,7 +47,6 @@ def busca(vetor: list, numero: int) -> bool:
         if i == numero:
             print(i)
             return True
-    
     return False
 
 def ordena(v: list) -> None:
@@ -95,7 +94,7 @@ def separa_pares_impares(vetor: list) -> None:
 
     for i in vetor:
         if i % 2 == 0:
-            esquerda.append(i) 
+            esquerda.append(i)
         else:
             direita.append(i) 
 
@@ -121,3 +120,55 @@ def maior_elemento(vetor: list):
         if i > maior_elemento:
             maior_elemento = i
     return maior_elemento
+
+opcao = None
+
+while opcao != 0:
+    try:
+        os.system("pause")
+        os.system("cls")
+        opcao = int(input("Selecione uma opção\n=> "))
+        match(opcao):
+            case 0:
+                print("Obrigado por testar =)")
+            case 1:
+                print(f"{v}\n{primeiro_elemento(v)}")
+            case 2:
+                exibe_negativos(v)
+            case 3:
+                print(soma_elementos(v))
+            case 4:
+                print(media_elementos(v))
+            case 5:
+                elementos_impares(v)
+            case 6:
+                exibe_extremos(v)
+            case 7:
+                exibe_indice_impar(v)
+            case 8:
+                numeroBusca = int(input("Digite um número para busca => "))
+                print(busca(v, numeroBusca))
+            case 9:
+                ordena(v)
+            case 10:
+                copia_vetor(v1, v2)
+            case 11:
+                inverte_vetor(v1, v2)
+            case 12:
+                ordena_vetor_crescente(v1)
+            case 13:
+                ordena_vetor_descrescente(v1)
+            case 14:
+                opcaoUsuario = input("C ou D => ")
+                ordena_vetor(v1, opcaoUsuario)
+            case 15:
+                separa_pares_impares(v1)
+            case 16:
+                print(conta_acima_media(v1))
+            case 17:
+                print(maior_elemento(v1))
+            case _:
+                print("Opção inválida")
+                os.system("pause")
+    except ValueError:
+        print("Ocorreu um erro de valor.")
